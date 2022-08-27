@@ -9,6 +9,12 @@ TagManager:
   - Ground
   - item
   - Boss
+  - Second
+  - Boss1
+  - Boss2
+  - Buleet2
+  - sea
+  - Auto
   layers:
   - Default
   - TransparentFX

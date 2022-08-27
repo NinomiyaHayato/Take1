@@ -7,6 +7,7 @@ public class PlayerHP : MonoBehaviour
 {
     [SerializeField]public  float _hp = 100;
     [SerializeField] Text _gauge;
+    [SerializeField] GameObject _plyerdestroy;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,11 @@ public class PlayerHP : MonoBehaviour
         {
             _hp = 100;
         }
+        if(_hp <= 0)
+        {
+            Instantiate(_plyerdestroy, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -31,6 +37,26 @@ public class PlayerHP : MonoBehaviour
         if(collision.gameObject.tag == "Enemy2")
         {
             Damage(2);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Boss1")
+        {
+            Damage(5);
+        }
+        else if(collision.gameObject.tag == "Boss2")
+        {
+            Damage(5);
+        }
+        else if(collision.gameObject.tag == "sea")
+        {
+            Damage(3);
+        }
+        else if(collision.gameObject.tag == "Auto")
+        {
+            Damage(5);
+            Destroy(collision.gameObject);
         }
     }
     public void Damage(int damage)

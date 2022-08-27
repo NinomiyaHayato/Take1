@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class TotalItem : MonoBehaviour
 {
@@ -21,7 +22,6 @@ public abstract class TotalItem : MonoBehaviour
                 collision.gameObject.GetComponent<PlayerWeapon>().TesetItem(this);
                 this.transform.position = Camera.main.transform.position;
                 GetComponent<Collider2D>().enabled = false;
-               
             }
         }
     }

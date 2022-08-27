@@ -56,16 +56,31 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BossHp.cs" />
     <Compile Include="Assets\Scripts\PlayerHP.cs" />
     <Compile Include="Assets\Scripts\DestroyTime.cs" />
     <Compile Include="Assets\Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\PlayerEnerugy.cs" />
+    <Compile Include="Assets\Scripts\ElevetorHead.cs" />
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
+    <Compile Include="Assets\Scripts\CreateShot.cs" />
+    <Compile Include="Assets\Scripts\BossCreate.cs" />
+    <Compile Include="Assets\Scripts\BossBullet.cs" />
     <Compile Include="Assets\Scripts\PowerupTEST.cs" />
+    <Compile Include="Assets\Scripts\CreateSS.cs" />
+    <Compile Include="Assets\Scripts\HealItem.cs" />
+    <Compile Include="Assets\Scripts\BossMove.cs" />
+    <Compile Include="Assets\Scripts\Tilemapup.cs" />
+    <Compile Include="Assets\Scripts\BossAttack.cs" />
     <Compile Include="Assets\Scripts\ScineLord.cs" />
     <Compile Include="Assets\Scripts\BulletManager.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\TotalItem.cs" />
+    <Compile Include="Assets\Scripts\Shooter.cs" />
+    <Compile Include="Assets\Scripts\ShooterSpeed.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Gothicvania Cemetery Artwork\about.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -697,6 +712,12 @@
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Editor.dll</HintPath>

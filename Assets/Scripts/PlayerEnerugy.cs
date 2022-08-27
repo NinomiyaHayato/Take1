@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerEnerugy : TotalItem //‰Û‘è
 {
+    int _healcount;
     // Start is called before the first frame update
     public override void Activate()
     {
-        FindObjectOfType<PlayerHP>()._hp += 30;
+        FindObjectOfType<PlayerHP>()._hp += 100; 
     }
 }

@@ -10,23 +10,26 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject _BulletPrehab;
     [SerializeField] GameObject _BulletPrehab2;
     [SerializeField] Transform _shotPoint;
-    bool _isright = true;
+    bool _isright;
 
     [SerializeField]public float _movepower;
-    Rigidbody2D _rb;
     [SerializeField]public float _jumppower;
+    Rigidbody2D _rb;
+    Vector2 _vel = default;
     int _count;
     [SerializeField] Text _shot2;
     Vector3 _position;
+    bool _canjump = true;
     List<TotalItem> _itemlist = new List<TotalItem>(); //課題
-
+    HealItem _healcount;
     // Start is called before the first frame update
     void Start()
     {
         _animator = this.GetComponent<Animator>();
         _rb = this.gameObject.GetComponent<Rigidbody2D>();
+        _vel = _rb.velocity;
         _position = transform.position;
-
+        _healcount = GameObject.Find("HealItem").GetComponent<HealItem>();
     }
 
     // Update is called once per frame
@@ -34,12 +37,12 @@ public class PlayerWeapon : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         Direction(x);
-        _rb.velocity = new Vector2(x, 0) * _movepower;
-        JumpPower();
+        _vel.x = x * _movepower;
+        _rb.velocity = new Vector2(_vel.x, _rb.velocity.y);
         _shot2.text = "のこり" + _count;
+        JumpPower();
 
-
-       if (x == 0 && Input.GetButtonDown("Fire1")) //銃を撃つ処理
+        if (x == 0 && Input.GetButtonDown("Fire1")) //銃を撃つ処理
         {
                 //アニメーションの切り替え
            _animator.SetTrigger("shot");
@@ -103,17 +106,19 @@ public class PlayerWeapon : MonoBehaviour
                 TotalItem item = _itemlist[0];
                 _itemlist.RemoveAt(0);
                 item.Activate();
+                _healcount._itemcount -= 1;
             }
         }
+       
     }
     void Direction(float inputX) //キャラの向き
     {
-        if(_isright == true && inputX < 0)
+        if(_isright == true && inputX > 0)
         {
             this.transform.Rotate(0f, 180f, 0f); //左
             _isright = false;
         }
-        if(_isright == false && inputX > 0)
+        if(_isright == false && inputX < 0)
         {
             this.transform.Rotate(0f, 180f, 0f); //右
             _isright = true;
@@ -122,23 +127,29 @@ public class PlayerWeapon : MonoBehaviour
     }
     public void JumpPower()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(_canjump == true)
         {
-            _rb.velocity = new Vector2(0,2)*_jumppower;
-            _animator.SetBool("Jump bool", true);
-            _animator.SetBool("Run bool", false);
-            _animator.SetBool("Run Shot bool", false);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _rb.velocity = Vector2.up * _jumppower;
+                _animator.SetTrigger("Jump");
+                _animator.SetBool("Run bool", false);
+                _animator.SetBool("Run Shot bool", false);
+                _canjump = false;
+                Debug.Log("falseです");
+            }
         }
-        else
-        {
-            _animator.SetBool("Jump bool", false);
-        }
+       
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "item")
         {
-            _count += 1;
+            _count += 100;
+        }
+       if(collision.gameObject.tag != "Boss1")
+        {
+            _canjump = true;
         }
     }
     public void TesetItem(TotalItem item) //課題
@@ -150,10 +161,32 @@ public class PlayerWeapon : MonoBehaviour
         if (collision.gameObject.tag == "Boss")
         {
             SceneManager.LoadScene("BossStage");
+            transform.position = new Vector3(-16.87f, -2.03f, 0);
         }
+        else if(collision.gameObject.tag == "Second")
+        {
+            SceneManager.LoadScene("SecondStage");
+            transform.position = new Vector3(-7.81f, -0.86f, 0);
+        }
+        else if(collision.gameObject.tag == "sea")
+        {
+            transform.position = new Vector3(-7.81f, -0.86f, 0);
+        }
+        if (collision.gameObject.tag == "Ground")
+        {
+            _canjump = true;
+            Debug.Log("trueです");
+        }
+        else if (collision.gameObject.tag != "Enemy" || collision.gameObject.tag != "Boss1" || collision.gameObject.tag != "Boss2")
+        {
+            _canjump = false;
+            Debug.Log("falseです");
+        }
+
     }
     private void OnLevelWasLoaded(int level)
     {
-        transform.position = _position;
+        //transform.position = _position;
     }
+  
 }
