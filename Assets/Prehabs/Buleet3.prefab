@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5320952733635026853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.32, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7065761, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _impactPrehab: {fileID: 0}
+  _impactPrehab: {fileID: 1883799593543043817, guid: e2463e74b9ee63c40af79afb388e62fc, type: 3}
 --- !u!50 &-8167714011040538410
 Rigidbody2D:
   serializedVersion: 4

@@ -18,7 +18,7 @@ public class BossMove : MonoBehaviour
     [SerializeField] float _attackpoint;
     [SerializeField] GameObject _bossbullet;
     [SerializeField] Transform _shotposition;
-    [SerializeField] float _cooltime;
+    [SerializeField]public float _cooltime;
     float _totaltime;
     [SerializeField] float _bossmoverandom = 0.5f;
     // Start is called before the first frame update

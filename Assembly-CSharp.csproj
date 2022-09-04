@@ -56,28 +56,39 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Underwater Diving\Scripts\PressEnter.cs" />
     <Compile Include="Assets\Scripts\BossHp.cs" />
+    <Compile Include="Assets\Scripts\Shooter.cs" />
+    <Compile Include="Assets\Underwater Diving\Scripts\TitleScreen.cs" />
     <Compile Include="Assets\Scripts\PlayerHP.cs" />
     <Compile Include="Assets\Scripts\DestroyTime.cs" />
     <Compile Include="Assets\Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\PlayerEnerugy.cs" />
     <Compile Include="Assets\Scripts\ElevetorHead.cs" />
+    <Compile Include="Assets\Underwater Diving\Scripts\DestroyObject.cs" />
+    <Compile Include="Assets\Underwater Diving\Scripts\HurtPlayer.cs" />
+    <Compile Include="Assets\Scripts\ShooterSpeed.cs" />
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\CreateShot.cs" />
+    <Compile Include="Assets\Underwater Diving\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\BossCreate.cs" />
+    <Compile Include="Assets\Underwater Diving\Scripts\MineController.cs" />
     <Compile Include="Assets\Scripts\BossBullet.cs" />
     <Compile Include="Assets\Scripts\PowerupTEST.cs" />
+    <Compile Include="Assets\Underwater Diving\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\MoveBord.cs" />
     <Compile Include="Assets\Scripts\CreateSS.cs" />
     <Compile Include="Assets\Scripts\HealItem.cs" />
     <Compile Include="Assets\Scripts\BossMove.cs" />
     <Compile Include="Assets\Scripts\Tilemapup.cs" />
+    <Compile Include="Assets\Underwater Diving\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Underwater Diving\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\BossAttack.cs" />
     <Compile Include="Assets\Scripts\ScineLord.cs" />
     <Compile Include="Assets\Scripts\BulletManager.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\TotalItem.cs" />
-    <Compile Include="Assets\Scripts\Shooter.cs" />
-    <Compile Include="Assets\Scripts\ShooterSpeed.cs" />
+    <Compile Include="Assets\Scripts\SwtchLight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Gothicvania Cemetery Artwork\about.txt" />

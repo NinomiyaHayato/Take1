@@ -22,6 +22,8 @@ public class PlayerWeapon : MonoBehaviour
     bool _canjump = true;
     List<TotalItem> _itemlist = new List<TotalItem>(); //課題
     HealItem _healcount;
+    Vector3 _transform;
+   public bool _setParent = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class PlayerWeapon : MonoBehaviour
         _vel = _rb.velocity;
         _position = transform.position;
         _healcount = GameObject.Find("HealItem").GetComponent<HealItem>();
+        _transform = this.transform.position;
     }
 
     // Update is called once per frame
@@ -75,17 +78,43 @@ public class PlayerWeapon : MonoBehaviour
             {
                 //アニメーションの切り替え
                 _animator.SetTrigger("shot");
-                Instantiate(_BulletPrehab2, _shotPoint.position, transform.localRotation);
-                _count -= 1;
+                //Instantiate(_BulletPrehab2, _shotPoint.position, transform.localRotation);
+                //_count -= 1;
+                if (_setParent == true)
+                {
+                    Instantiate(_BulletPrehab2, _shotPoint.position, transform.localRotation);
+                    _count -= 1;
+                }
+                else if(_isright == true)
+                {
+                    Instantiate(_BulletPrehab2, _shotPoint.position, Quaternion.Euler(0f, 0f, 180f));
+                    _count -= 1;
+                }
+                else if(_isright == false)
+                {
+                    Instantiate(_BulletPrehab2, _shotPoint.position, Quaternion.Euler(0f, 0f, 360f));
+                    _count -= 1;
+                }
+
             }
 
-            if (x != 0 && Input.GetButtonDown("Fire2"))
+            if (x !=0 && Input.GetButtonDown("Fire2"))
             {
                 _animator.SetBool("Run Shot bool", true);
                 _animator.SetBool("Run bool", false);
                 Debug.Log("test");
-                Instantiate(_BulletPrehab2, _shotPoint.position, transform.localRotation);
-                _count -= 1;
+                //Instantiate(_BulletPrehab2, _shotPoint.position, transform.localRotation);
+                //_count -= 1;
+                if (_setParent == true)
+                {
+                    Instantiate(_BulletPrehab2, _shotPoint.position, transform.localRotation);
+                    _count -= 1;
+                }
+                else
+                {
+                    Instantiate(_BulletPrehab2, _shotPoint.position, Quaternion.Euler(0f, 0f, 180f));
+                    _count -= 1;
+                }
             }
             else if (x != 0 && !Input.GetButtonDown("Fire2"))
             {
@@ -152,6 +181,7 @@ public class PlayerWeapon : MonoBehaviour
             _canjump = true;
         }
     }
+  
     public void TesetItem(TotalItem item) //課題
     {
         _itemlist.Add(item);
@@ -167,6 +197,11 @@ public class PlayerWeapon : MonoBehaviour
         {
             SceneManager.LoadScene("SecondStage");
             transform.position = new Vector3(-7.81f, -0.86f, 0);
+        }
+        else if(collision.gameObject.tag == "First")
+        {
+            SceneManager.LoadScene("Main");
+            transform.position = _transform;
         }
         else if(collision.gameObject.tag == "sea")
         {

@@ -7,11 +7,13 @@ public class BulletManager : MonoBehaviour
     [SerializeField]public float _speed;
     Rigidbody2D _rb;
     [SerializeField] GameObject _impactPrehab;
+    GameObject _shootPoint;
     // Start is called before the first frame update
     void Start()
     {
         _rb = transform.GetComponent<Rigidbody2D>();
-        _rb.velocity = transform.right * _speed;
+        _shootPoint = GameObject.Find("ShootPoint");
+        _rb.velocity = _shootPoint.transform.up * _speed;
     }
 
     // Update is called once per frame

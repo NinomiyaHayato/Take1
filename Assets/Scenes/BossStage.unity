@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _createshot: {fileID: 6858289133646631495, guid: 377a46b3f86816d4e85d2bfc60544835, type: 3}
-  _cooltime: 1.5
+  _cooltime: 1
 --- !u!1 &28583691
 GameObject:
   m_ObjectHideFlags: 0

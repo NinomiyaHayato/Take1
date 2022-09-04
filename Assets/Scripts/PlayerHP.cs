@@ -51,7 +51,7 @@ public class PlayerHP : MonoBehaviour
         }
         else if(collision.gameObject.tag == "sea")
         {
-            Damage(3);
+            Damage(10);
         }
         else if(collision.gameObject.tag == "Auto")
         {

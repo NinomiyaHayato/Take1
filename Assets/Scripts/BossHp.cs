@@ -9,10 +9,11 @@ public class BossHp : MonoBehaviour
     [SerializeField] GameObject _background1;
     [SerializeField] GameObject _background2;
     [SerializeField] GameObject _createshot;
+    BossMove _cooltime2;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _cooltime2 = GameObject.FindObjectOfType<BossMove>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class BossHp : MonoBehaviour
             _background1.SetActive(false);
             _background2.SetActive(true);
             _createshot.SetActive(true);
+            _cooltime2._cooltime = 2f;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
