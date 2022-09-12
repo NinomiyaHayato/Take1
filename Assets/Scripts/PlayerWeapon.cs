@@ -136,6 +136,10 @@ public class PlayerWeapon : MonoBehaviour
                 _itemlist.RemoveAt(0);
                 item.Activate();
                 _healcount._itemcount -= 1;
+                if(_healcount._itemcount < 0)
+                {
+                    _healcount._itemcount = 0;
+                }
             }
         }
        
@@ -202,12 +206,13 @@ public class PlayerWeapon : MonoBehaviour
         {
             SceneManager.LoadScene("Main");
             transform.position = _transform;
+            //transform.position = new Vector3(-14.67f, -0.27f, 26.50708f);
         }
         else if(collision.gameObject.tag == "sea")
         {
             transform.position = new Vector3(-7.81f, -0.86f, 0);
         }
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground"||collision.gameObject.tag =="Ground2")
         {
             _canjump = true;
             Debug.Log("true‚Å‚·");

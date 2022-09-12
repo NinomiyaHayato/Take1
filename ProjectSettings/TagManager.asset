@@ -16,6 +16,7 @@ TagManager:
   - sea
   - Auto
   - First
+  - Ground2
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Bord
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 

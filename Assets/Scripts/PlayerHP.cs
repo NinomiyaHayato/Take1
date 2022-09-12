@@ -32,11 +32,11 @@ public class PlayerHP : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Damage(1);
+            Damage(5);
         }
         if(collision.gameObject.tag == "Enemy2")
         {
-            Damage(2);
+            Damage(5);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

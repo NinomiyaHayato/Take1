@@ -5,11 +5,13 @@ using UnityEngine;
 public class MoveBord : MonoBehaviour
 {
     PlayerWeapon _set;
-
+    Transform _player;
     // Start is called before the first frame update
     void Start()
     {
-        _set = GameObject.FindObjectOfType<PlayerWeapon>();
+        //_set = GameObject.FindObjectOfType<PlayerWeapon>();
+        _set = GameObject.Find("Player").GetComponent<PlayerWeapon>();
+        _player = GameObject.Find("Main").transform;
     }
 
     // Update is called once per frame
@@ -31,6 +33,8 @@ public class MoveBord : MonoBehaviour
         {
             collision.gameObject.transform.SetParent(null);
             _set._setParent = true;
+            collision.gameObject.transform.SetParent(_player);
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

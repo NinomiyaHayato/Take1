@@ -27,6 +27,10 @@ public class EnemyManager : MonoBehaviour
         {
             Playerdamage(1);
         }
+        else if(collision.gameObject.tag == "Buleet2")
+        {
+            Playerdamage(3);
+        }
     }
     public void Playerdamage(int hp)
     {

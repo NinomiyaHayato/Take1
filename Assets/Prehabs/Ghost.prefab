@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1800587688754321956}
   - component: {fileID: 1800587688754321959}
   - component: {fileID: 1800587688754321957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!61 &1800587688754321959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1071428, y: 1.5714285}
+    oldSize: {x: 0.9117647, y: 1.2941177}
     newSize: {x: 0.31, y: 0.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -164,5 +164,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a6fb1ec2920e94fa086b3ea648dfe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 5
+  _hp: 15
   _deathEffectPrehab: {fileID: 7362515142759445585, guid: 44699c764e7854347a535623a4b86d25, type: 3}
