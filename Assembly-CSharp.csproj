@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\CreateShot.cs" />
     <Compile Include="Assets\Underwater Diving\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyShooter.cs" />
     <Compile Include="Assets\Scripts\BossCreate.cs" />
     <Compile Include="Assets\Underwater Diving\Scripts\MineController.cs" />
     <Compile Include="Assets\Scripts\BossBullet.cs" />
@@ -92,7 +93,7 @@
     <Compile Include="Assets\Scripts\BulletManager.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\TotalItem.cs" />
-    <Compile Include="Assets\Scripts\EnemyShooter.cs" />
+    <Compile Include="Assets\Scripts\EnemyBuleetI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Gothicvania Cemetery Artwork\about.txt" />

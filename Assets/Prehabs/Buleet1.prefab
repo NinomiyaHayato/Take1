@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1708512655962374964}
   - component: {fileID: 1708512655962374968}
   - component: {fileID: 1708512655962374967}
-  - component: {fileID: 7922641978227938754}
+  - component: {fileID: -2281768327180789946}
   m_Layer: 0
   m_Name: Buleet1
   m_TagString: Buleet
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1708512655962374967
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.03906444, y: -0.000000004656844}
   m_Size: {x: 0.54687154, y: 0.15000011}
   m_Direction: 1
---- !u!114 &7922641978227938754
+--- !u!114 &-2281768327180789946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,8 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708512655962374963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ed75af62f073b4cb23d985893a4bb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f4e8724c23ceb74589a1b1f4849e550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
-  _impactPrehab: {fileID: 1883799593543043817, guid: e2463e74b9ee63c40af79afb388e62fc, type: 3}
+  m_speed: 5
