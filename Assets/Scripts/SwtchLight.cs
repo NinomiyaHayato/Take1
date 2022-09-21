@@ -25,12 +25,16 @@ public class SwtchLight : MonoBehaviour
     {
         if(_game && _game1)
         {
-            _game.SetActive(true);
-            _game1.SetActive(false);
+            _game.SetActive(false);
+            _game1.SetActive(true);
         }
     }
    public  void SceneLord(string name)
     {
       this._image.DOFade(2f,2f).SetDelay(1.5f).OnComplete(()=> SceneManager.LoadScene(name));
+    }
+    public void SceneLord2(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 }

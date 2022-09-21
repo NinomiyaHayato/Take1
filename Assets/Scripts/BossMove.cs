@@ -21,6 +21,10 @@ public class BossMove : MonoBehaviour
     [SerializeField]public float _cooltime;
     float _totaltime;
     [SerializeField] float _bossmoverandom = 0.5f;
+    float _addtime;//Playerがずっと近くにいる時のタイム計測
+    [SerializeField] float _rimittime;//Playerが近づいていられる限界時間
+    [SerializeField] float _rimitM;//PlayerにAddForceをかける距離（Distanceとの比較）
+    [SerializeField] float _power;//Playerを突き放す力
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +40,29 @@ public class BossMove : MonoBehaviour
          _posA = _boss.transform.position;
          _posB = GameObject.Find("Player").transform.position;
         _posAB = Vector3.Distance(_posA, _posB);
-        Debug.Log(_posAB);
+        //Debug.Log(_posAB);
+        if(_posAB < _rimitM)
+        {
+            _addtime += Time.deltaTime;
+            Debug.Log("計測中");
+            if(_addtime > _rimittime && _bosschange == true)
+            {
+                Rigidbody2D _rbp = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+                _rbp.AddForce(Vector2.right * _power,ForceMode2D.Impulse);
+                _rimittime = 0;
+            }
+            else if(_addtime > _rimittime && _bosschange == false)
+            {
+                Rigidbody2D _rbp = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+                _rbp.AddForce(Vector2.left * _power, ForceMode2D.Impulse);
+                _rimittime = 0;
+            }
+        }
+        //else if(_posAB > _rimitM)
+        //{
+        //    _addtime = 0;
+        //    Debug.Log("初期値です");
+        //}
         BossDerection();
         BossBehavior();
         Animations();

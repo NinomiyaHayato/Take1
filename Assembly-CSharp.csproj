@@ -56,13 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\EnemyMoeE2.cs" />
     <Compile Include="Assets\Underwater Diving\Scripts\PressEnter.cs" />
     <Compile Include="Assets\Scripts\BossHp.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <Compile Include="Assets\Underwater Diving\Scripts\TitleScreen.cs" />
     <Compile Include="Assets\Scripts\PlayerHP.cs" />
     <Compile Include="Assets\Scripts\DestroyTime.cs" />
-    <Compile Include="Assets\Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\AreaEfectStop.cs" />
     <Compile Include="Assets\Scripts\PlayerEnerugy.cs" />
     <Compile Include="Assets\Scripts\ElevetorHead.cs" />
@@ -72,13 +72,16 @@
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\CreateShot.cs" />
     <Compile Include="Assets\Underwater Diving\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyMoveE1.cs" />
     <Compile Include="Assets\Scripts\EnemyShooter.cs" />
     <Compile Include="Assets\Scripts\BossCreate.cs" />
     <Compile Include="Assets\Underwater Diving\Scripts\MineController.cs" />
     <Compile Include="Assets\Scripts\BossBullet.cs" />
+    <Compile Include="Assets\Scripts\EnemyBuleetI.cs" />
     <Compile Include="Assets\Scripts\PowerupTEST.cs" />
     <Compile Include="Assets\Scripts\EnemyPatoroal.cs" />
     <Compile Include="Assets\Underwater Diving\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\EnemyMoveG.cs" />
     <Compile Include="Assets\Scripts\MoveBord.cs" />
     <Compile Include="Assets\Scripts\CreateSS.cs" />
     <Compile Include="Assets\Scripts\HealItem.cs" />
@@ -88,12 +91,11 @@
     <Compile Include="Assets\Underwater Diving\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\SwtchLight.cs" />
     <Compile Include="Assets\Scripts\BossAttack.cs" />
-    <Compile Include="Assets\Scripts\ITween.cs" />
+    <Compile Include="Assets\Scripts\GateCount.cs" />
     <Compile Include="Assets\Scripts\ScineLord.cs" />
     <Compile Include="Assets\Scripts\BulletManager.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\TotalItem.cs" />
-    <Compile Include="Assets\Scripts\EnemyBuleetI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Gothicvania Cemetery Artwork\about.txt" />

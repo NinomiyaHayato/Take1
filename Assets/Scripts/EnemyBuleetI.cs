@@ -6,22 +6,28 @@ public class EnemyBuleetI : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] float m_speed = 1f;
-
     void Start()
     {
         // 速度ベクトルを求める
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player)
+        GameObject _player = GameObject.FindGameObjectWithTag("Player");
+        if (_player)
         {
-            Vector2 v = player.transform.position - this.transform.position;
+            Vector2 v = _player.transform.position - this.transform.position;
             v = v.normalized * m_speed;
 
             // 速度ベクトルをセットする
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             rb.velocity = v;
-            rb.transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
+            //rb.transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
         }
-
+        if (_player.transform.position.x > this.transform.position.x)
+        {
+            this.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+        }
+        else if(_player.transform.position.x < this.transform.position.x)
+        {
+            this.transform.rotation = new Quaternion(0f,90f, 0f, 0f);
+        }
     }
     private void Update()
     {
@@ -31,7 +37,7 @@ public class EnemyBuleetI : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject, 0.5f);
+            Destroy(this.gameObject);
         }
         else
         {

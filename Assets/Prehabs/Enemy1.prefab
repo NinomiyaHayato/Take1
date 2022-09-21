@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 633130649273323403}
   - component: {fileID: 633130649273323402}
   - component: {fileID: 633130649273323396}
-  - component: {fileID: 633130649273323397}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -167,18 +166,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 3
   _deathEffectPrehab: {fileID: 7362515142759445585, guid: 44699c764e7854347a535623a4b86d25, type: 3}
---- !u!114 &633130649273323397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633130649273323406}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65a87d5266614e248965a9c3687a2152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _speed: 0.5
-  _attackrange: 2
