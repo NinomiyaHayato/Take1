@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
+  _impactprehab: {fileID: 1883799593543043817, guid: e2463e74b9ee63c40af79afb388e62fc, type: 3}
 --- !u!114 &8815977943838269063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,4 +169,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.47058824
+  m_Radius: 0.44

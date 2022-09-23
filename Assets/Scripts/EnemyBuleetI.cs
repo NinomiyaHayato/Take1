@@ -6,6 +6,7 @@ public class EnemyBuleetI : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] float m_speed = 1f;
+    [SerializeField] GameObject _impactprehab;
     void Start()
     {
         // 速度ベクトルを求める
@@ -37,6 +38,7 @@ public class EnemyBuleetI : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            Instantiate(_impactprehab, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
         else

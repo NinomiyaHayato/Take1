@@ -24,6 +24,8 @@ public class PlayerWeapon : MonoBehaviour
     HealItem _healcount;
     Vector3 _transform;
    public bool _setParent = true;
+    AudioSource _audio;
+    [SerializeField] AudioClip _shotaudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class PlayerWeapon : MonoBehaviour
         _position = transform.position;
         _healcount = GameObject.Find("HealItem").GetComponent<HealItem>();
         _transform = this.transform.position;
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,7 +53,7 @@ public class PlayerWeapon : MonoBehaviour
                 //アニメーションの切り替え
            _animator.SetTrigger("shot");
            Instantiate(_BulletPrehab, _shotPoint.position, transform.localRotation);
-          
+            _audio.PlayOneShot(_shotaudio);
         }
 
         if (x != 0 && Input.GetButtonDown("Fire1"))
@@ -59,7 +62,7 @@ public class PlayerWeapon : MonoBehaviour
             _animator.SetBool("Run bool", false);
             Debug.Log("test");
             Instantiate(_BulletPrehab, _shotPoint.position, transform.localRotation);
-
+            _audio.PlayOneShot(_shotaudio);
         }
         else if(x !=0 && !Input.GetButtonDown("Fire1"))
         {
@@ -84,16 +87,19 @@ public class PlayerWeapon : MonoBehaviour
                 {
                     Instantiate(_BulletPrehab2, _shotPoint.position, transform.localRotation);
                     _count -= 1;
+                    _audio.PlayOneShot(_shotaudio);
                 }
                 else if(_isright == true)
                 {
                     Instantiate(_BulletPrehab2, _shotPoint.position, Quaternion.Euler(0f, 0f, 180f));
                     _count -= 1;
+                    _audio.PlayOneShot(_shotaudio);
                 }
                 else if(_isright == false)
                 {
                     Instantiate(_BulletPrehab2, _shotPoint.position, Quaternion.Euler(0f, 0f, 360f));
                     _count -= 1;
+                    _audio.PlayOneShot(_shotaudio);
                 }
 
             }
@@ -109,11 +115,13 @@ public class PlayerWeapon : MonoBehaviour
                 {
                     Instantiate(_BulletPrehab2, _shotPoint.position, transform.localRotation);
                     _count -= 1;
+                    _audio.PlayOneShot(_shotaudio);
                 }
                 else
                 {
                     Instantiate(_BulletPrehab2, _shotPoint.position, Quaternion.Euler(0f, 0f, 180f));
                     _count -= 1;
+                    _audio.PlayOneShot(_shotaudio);
                 }
             }
             else if (x != 0 && !Input.GetButtonDown("Fire2"))

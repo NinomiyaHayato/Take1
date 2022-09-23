@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
     [SerializeField]public  float _hp = 100;
     [SerializeField] Text _gauge;
     [SerializeField] GameObject _plyerdestroy;
+    float _addcooltime;
+    [SerializeField] float _lordcooltime;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,19 +27,24 @@ public class PlayerHP : MonoBehaviour
         }
         if(_hp <= 0)
         {
+            _addcooltime += Time.deltaTime;
             Instantiate(_plyerdestroy, transform.position, transform.rotation);
-            Destroy(gameObject);
+            Destroy(gameObject,0.6f);
+            if(_addcooltime >= _lordcooltime)
+            {
+                SceneManager.LoadScene("GameOver");
+            } 
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Damage(5);
+            Damage(3);
         }
         if(collision.gameObject.tag == "Enemy2")
         {
-            Damage(5);
+            Damage(3);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

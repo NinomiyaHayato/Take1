@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossHp : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class BossHp : MonoBehaviour
     BossMove _cooltime2;
     [SerializeField]AudioSource _audio1;
     [SerializeField]AudioSource _audio2;
+    float _addlordcooltime;
+    [SerializeField] float _lordcooltime;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +28,13 @@ public class BossHp : MonoBehaviour
     {
         if (_hp <= 0)
         {
+            _addlordcooltime += Time.deltaTime;
             Instantiate(_deathEffectPrehab, transform.position, transform.rotation);
-            Destroy(gameObject);
+            Destroy(gameObject,0.8f);
+            if(_addlordcooltime >= _lordcooltime)
+            {
+                SceneManager.LoadScene("GameClear");
+            }
         }
         if (_hp <= 50)
         {
