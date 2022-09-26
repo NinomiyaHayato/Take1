@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9103906975418564315}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShotpositionE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2076952288335558005}
   - component: {fileID: 7059443759340005198}
   - component: {fileID: 563741590931282037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: octopus-1
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -36,5 +36,10 @@ public class SwtchLight : MonoBehaviour
     public void SceneLord2(string name)
     {
         SceneManager.LoadScene(name);
+        GameObject _main = GameObject.Find("Main");
+        if(_main)
+        {
+            Destroy(_main);
+        }
     }
 }

@@ -8,14 +8,14 @@ public class ScineLord : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (FindObjectsOfType<ScineLord>().Length > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+            if (FindObjectsOfType<ScineLord>().Length > 1)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                DontDestroyOnLoad(gameObject);
+            }
     }
 
     // Update is called once per frame

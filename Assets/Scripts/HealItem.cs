@@ -7,10 +7,12 @@ public class HealItem : MonoBehaviour
 {
     public int _itemcount;
     [SerializeField]Text _text;
+    AudioSource _audio;
+    [SerializeField] AudioClip _catchaudio;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class HealItem : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             _itemcount += 1;
+            _audio.PlayOneShot(_catchaudio);
         }
     }
 }

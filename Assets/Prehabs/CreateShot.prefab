@@ -165,3 +165,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _impactprehab: {fileID: 1883799593543043817, guid: e2463e74b9ee63c40af79afb388e62fc, type: 3}

@@ -26,6 +26,7 @@ public class PlayerWeapon : MonoBehaviour
    public bool _setParent = true;
     AudioSource _audio;
     [SerializeField] AudioClip _shotaudio;
+    [SerializeField] AudioClip _catchaudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -187,6 +188,7 @@ public class PlayerWeapon : MonoBehaviour
         if (collision.gameObject.tag == "item")
         {
             _count += 100;
+            _audio.PlayOneShot(_catchaudio);
         }
        if(collision.gameObject.tag != "Boss1")
         {

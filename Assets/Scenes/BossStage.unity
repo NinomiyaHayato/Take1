@@ -1236,8 +1236,8 @@ MonoBehaviour:
   _cooltime: 3
   _bossmoverandom: 0.5
   _rimittime: 2
-  _rimitM: 1.5
-  _power: 3
+  _rimitM: 3
+  _power: 10000
 --- !u!1 &1254084021
 GameObject:
   m_ObjectHideFlags: 0

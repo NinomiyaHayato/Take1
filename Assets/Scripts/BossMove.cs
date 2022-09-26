@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class BossMove : MonoBehaviour
 {
     Rigidbody2D _rb;
@@ -31,41 +31,39 @@ public class BossMove : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _totaltime = 0;
-       
     }
 
     // Update is called once per frame
     void Update()
     {
-         _posA = _boss.transform.position;
-         _posB = GameObject.Find("Player").transform.position;
-        _posAB = Vector3.Distance(_posA, _posB);
-        //Debug.Log(_posAB);
-        if(_posAB < _rimitM)
-        {
-            _addtime += Time.deltaTime;
-            Debug.Log("計測中");
-            if(_addtime > _rimittime && _bosschange == true)
+            _posA = _boss.transform.position;
+            _posB = GameObject.Find("Player").transform.position;
+            _posAB = Vector3.Distance(_posA, _posB);
+            if (_posAB < _rimitM)
             {
-                Rigidbody2D _rbp = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-                _rbp.AddForce(Vector2.right * _power,ForceMode2D.Impulse);
-                _rimittime = 0;
+                _addtime += Time.deltaTime;
+                Debug.Log("計測中");
+                if (_addtime > _rimittime && _bosschange == true)
+                {
+                    Rigidbody2D _rbp = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+                    _rbp.AddForce(Vector2.right * _power, ForceMode2D.Impulse);
+                    _addtime = 0;
+                }
+                else if (_addtime > _rimittime && _bosschange == false)
+                {
+                    Rigidbody2D _rbp = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+                    _rbp.AddForce(Vector2.left * _power, ForceMode2D.Impulse);
+                    _addtime = 0;
+                }
             }
-            else if(_addtime > _rimittime && _bosschange == false)
+            else if (_posAB > _rimitM)
             {
-                Rigidbody2D _rbp = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-                _rbp.AddForce(Vector2.left * _power, ForceMode2D.Impulse);
-                _rimittime = 0;
+                _addtime = 0;
+                Debug.Log("初期値です");
             }
-        }
-        //else if(_posAB > _rimitM)
-        //{
-        //    _addtime = 0;
-        //    Debug.Log("初期値です");
-        //}
-        BossDerection();
-        BossBehavior();
-        Animations();
+            BossDerection();
+            BossBehavior();
+            Animations();
     }
 
     public void BossBehavior()
